@@ -1,0 +1,28 @@
+%! Package = mmae320
+%! Author = Len Washington III
+%! Date = 01/15/2025
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mmae320}[2025/01/15 A styling package for the class: MMAE 320 - "Thermodynamics".]
+
+\RequirePackage{kvoptions}
+
+\SetupKeyvalOptions{
+	family=mmae,
+	prefix=mmae@
+}
+
+\DeclareStringOption{title}
+\DeclareStringOption[Len Washington III]{author}
+\DeclareStringOption[\today]{date}
+\DeclareStringOption[{"Thermodynamics"}]{subject}
+\DeclareStringOption[{MMAE 320}]{subjectCode}
+
+\ProcessKeyvalOptions*
+
+\RequirePackage[author=\mmae@author,
+	title=\mmae@title,
+	date=\mmae@date,
+	subject=\mmae@subject,
+	code=\mmae@subjectCode
+]{iitacademics}
